@@ -21,7 +21,7 @@ concurrency:
 
 jobs:
   # Test job
-  deploy:
+  test:
     runs-on: ubuntu-latest
     steps:
       - name: Run Tests
