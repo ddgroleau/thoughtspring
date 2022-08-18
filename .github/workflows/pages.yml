@@ -1,4 +1,4 @@
-name: Deploy Next.js site to Pages
+name: Deploy to Github Pages
 
 on:
   # Runs on pushes targeting the default branch
@@ -20,9 +20,19 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  # Test job
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Tests
+        id: test
+        uses: actions/checkout@v3
+        run: yarn test-pipeline
+
   # Build job
   build:
     runs-on: ubuntu-latest
+    needs: test
     steps:
       - name: Checkout
         uses: actions/checkout@v3

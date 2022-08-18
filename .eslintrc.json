@@ -8,7 +8,7 @@
       "import/no-unresolved": "warn",
       "import/extensions": "warn",
       "semi":"error",
-      "no-undef": "error",
+      "no-undef": "off",
       "no-unused-vars":"off",
       "react/no-unescaped-entities": 0,
       "react-hooks/exhaustive-deps": "off"
