@@ -1,4 +1,3 @@
-const siteUrl = process.env.NEXT_PUBLIC_DOMAIN_URL;
 module.exports = {
     siteUrl,
     exclude: ["/404"],
@@ -8,8 +7,7 @@ module.exports = {
             { userAgent: "*", allow: "/" },
         ],
         additionalSitemaps: [
-            `${siteUrl}sitemap.xml`,
-            `${siteUrl}server-sitemap.xml`,
+            `https://thoughtspringcreative.com/sitemap.xml`,
         ],
     },
 };

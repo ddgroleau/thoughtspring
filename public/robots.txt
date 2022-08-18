@@ -1,9 +1,5 @@
 # *
 User-agent: *
-Disallow: /404
-
-# *
-User-agent: *
 Allow: /
 
 # Host
@@ -11,4 +7,3 @@ Host: https://thoughtspringcreative.com/
 
 # Sitemaps
 Sitemap: https://thoughtspringcreative.com/sitemap.xml
-Sitemap: https://thoughtspringcreative.com/server-sitemap.xml
