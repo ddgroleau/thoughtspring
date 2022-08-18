@@ -1,3 +1,16 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": "next",
+  "rules": {
+      "eqeqeq": ["error", "always"],
+      "max-len": ["warn", 120],
+      "func-names": "warn",
+      "indent": ["error", 4],
+      "import/no-unresolved": "warn",
+      "import/extensions": "warn",
+      "semi":"error",
+      "no-undef": "error",
+      "no-unused-vars":"off",
+      "react/no-unescaped-entities": 0,
+      "react-hooks/exhaustive-deps": "off"
+  }
 }
