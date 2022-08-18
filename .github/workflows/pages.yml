@@ -20,7 +20,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  # Test job
+  # Test
   test:
     runs-on: ubuntu-latest
     steps:
@@ -30,7 +30,7 @@ jobs:
       - name: Run tests
         run: yarn test-pipeline
 
-  # Build job
+  # Build
   build:
     runs-on: ubuntu-latest
     needs: test
@@ -89,7 +89,7 @@ jobs:
         with:
           path: ./out
 
-  # Deployment job
+  # Deployment
   deploy:
     environment:
       name: github-pages
