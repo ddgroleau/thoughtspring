@@ -1,0 +1,132 @@
+@import './utility.scss';
+
+.container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.topContainer {
+    display: flex;
+    background-color: $ts-grey;
+}
+
+.top {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.bottom {
+    background-color: $ts-black;
+    color: $ts-white;
+    display: flex;
+    justify-content: center;
+}
+
+.bottomLinks {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    width: 95%;
+    padding: 0.5rem;
+}
+
+.logo {
+    display: flex;
+    background-color: $ts-grey;
+    border: none;
+    cursor: pointer;
+}
+
+.nav {
+    display: flex;
+    gap: 2rem;
+    flex-flow: row wrap;
+    padding: 1rem;
+    a:hover {
+        text-decoration: underline;
+        transition: .4s;
+    }
+}
+
+.navCategory {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    a {
+        font-size: small;
+    }
+}
+
+.navParent {
+    a {
+        font-weight: 600;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+}
+
+.navChild {
+    a {
+        font-weight: 200;
+        text-decoration: none;
+    }
+}
+
+.social {
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    gap: 1rem;
+    padding-block: 1rem;
+    margin-bottom: 1rem;
+}
+
+.socialRow {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    img {
+        border-radius: 16px;
+        opacity: .6;
+        cursor: pointer;
+    }
+    img:hover {
+        opacity: 1;
+        transition: .4s;
+    }
+}
+
+
+@media (min-width: 768px) {
+    .topContainer {
+        justify-content: center;
+    }
+    .top {
+        flex-direction: row;
+        width: 95%;
+        justify-content: space-evenly;
+    }
+    .nav {
+        flex-flow: row nowrap;
+        width: fit-content;
+        justify-content: flex-end;
+    }
+    .social {
+        flex-direction: column;
+        align-items: flex-end;
+        width: fit-content;
+        margin-bottom: 0;
+        margin-left: auto;
+    }
+    .logo {
+        width: fit-content;
+        margin-left: auto;
+    }
+}

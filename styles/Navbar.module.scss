@@ -1,0 +1,131 @@
+@import './utility.scss';
+
+.navContainer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: $ts-black;
+    z-index: 2;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    width: 95%;
+    color: $ts-white;
+    justify-content: space-between;
+    background-color: $ts-black;
+}
+
+.navLogo {
+    margin-left: -0.5rem;
+    background: 0;
+    border: 0;
+    cursor: pointer;
+}
+
+.navLinks {
+    display: none;
+    gap: 3rem;
+    z-index: 1;
+    a {
+        text-decoration: none;
+        white-space: nowrap;
+    }
+}
+
+.navLinksOpen {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    position: absolute;
+    background-color: $ts-black;
+    top: 3rem;
+    left: 0;
+    width: 100%;
+    animation: fadeDown .4s ease-in-out;
+}
+
+.navLinksClosed {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    position: absolute;
+    background-color: $ts-black;
+    top: 3rem;
+    left: 0;
+    width: 100%;
+    animation: fadeUp .4s ease-in-out forwards;
+}
+
+.mobileMenu {
+    display: flex;
+    background: 0;
+    border: 0;
+    cursor: pointer;
+}
+
+.active {
+    border-bottom: solid $ts-white 1px;
+    max-width: fit-content;
+    padding-bottom: 0.5rem;
+}
+
+.rotate {
+    animation: rotate .4s ease-out;
+}
+
+@media (min-width: 768px) {
+    .mobileMenu { 
+        display: none;
+    }
+    .navLinks { 
+        display: flex;
+    }
+    .navLogo {
+        margin-left:-2%;
+    }
+    .navLinksOpen {
+        display: none;
+    }
+    .navLinksClosed {
+        animation: none;
+        display: flex;
+        flex-direction: row;
+        padding: 0;
+        position: initial;
+        background-color: $ts-black;
+        top: inherit;
+        left: inherit;
+        width: initial;
+    }
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(180deg);
+    }
+}
+
+@keyframes fadeDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20rem);
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeUp {
+    0% {
+        opacity: 1;
+        z-index: -1;
+    }
+    100% {
+        opacity: 0.4;
+        transform: translateY(-20rem);
+        z-index: -1;
+    }
+}
+
