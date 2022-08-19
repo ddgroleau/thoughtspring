@@ -2,14 +2,34 @@ import { render, screen } from '@testing-library/react';
 import Home from '../pages/index';
 import '@testing-library/jest-dom';
 
+const useRouter = jest.spyOn(require('next/router'), 'useRouter');
+export function mockNextUseRouter(pathname: string) {
+    useRouter.mockImplementation(() => ({
+        route: '',
+        basePath: '',
+        pathname,
+        query: {},
+        asPath: '',
+        push: async () => true,
+        replace: async () => true,
+        reload: () => null,
+        back: () => null,
+        prefetch: async () => undefined,
+        beforePopState: () => null,
+        isFallback: false,
+        events: {
+            on: () => null,
+            off: () => null,
+            emit: () => null,
+        },
+    }));
+}
+
+mockNextUseRouter('/');
 describe('Home', () => {
-    it('renders a heading', () => {
+    it('renders component', () => {
         render(<Home />);
-
-        const heading = screen.getByRole('heading', {
-            name: /welcome to next\.js!/i,
-        });
-
+        const heading = screen.getByText("Coming Soon");
         expect(heading).toBeInTheDocument();
     });
 });
