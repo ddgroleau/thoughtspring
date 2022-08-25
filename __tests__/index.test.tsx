@@ -29,7 +29,7 @@ mockNextUseRouter('/');
 describe('Home', () => {
     it('renders component', () => {
         render(<Home />);
-        const heading = screen.getByText("Coming Soon");
+        const heading = screen.getByText("Take your business to the next level.");
         expect(heading).toBeInTheDocument();
     });
 });

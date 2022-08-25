@@ -2,10 +2,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react';
-import styles from '../../styles/Footer.module.scss';
+import styles from '../styles/Footer.module.scss';
 
 const Footer = () => {
     const router = useRouter();
+    const ICON_DIMENSION=40;
     return (
         <footer className={styles.container}>
             <section className={styles.topContainer}>
@@ -38,24 +39,30 @@ const Footer = () => {
                     <section className={styles.social}>
                         <div className={styles.socialRow}>
                             <Link href="https://facebook.com" passHref>
-                                <Image src="/facebook-icon.svg" width={35} height={35} alt="Twitter Feed" />
+                                <Image src="/facebook-icon.svg" 
+                                    width={ICON_DIMENSION} height={ICON_DIMENSION} alt="Facebook" />
                             </Link>
                             <Link href="https://instagram.com" passHref>
-                                <Image src="/instagram-icon.svg" width={35} height={35} alt="Twitter Feed" />
+                                <Image src="/instagram-icon.svg" 
+                                    width={ICON_DIMENSION} height={ICON_DIMENSION} alt="Instagram" />
                             </Link>
                             <Link href="https://youtube.com" passHref>
-                                <Image src="/youtube-icon.svg" width={35} height={35} alt="Twitter Feed" />
+                                <Image src="/youtube-icon.svg" 
+                                    width={ICON_DIMENSION} height={ICON_DIMENSION} alt="Youtube" />
                             </Link>
                         </div>
                         <div className={styles.socialRow}>
                             <Link href="https://linkedin.com" passHref>
-                                <Image src="/linkedin-icon.svg" width={35} height={35} alt="Twitter Feed" />
+                                <Image src="/linkedin-icon.svg" 
+                                    width={ICON_DIMENSION} height={ICON_DIMENSION} alt="LinkedIn" />
                             </Link>
                             <Link href="https://twitter.com" passHref>
-                                <Image src="/twitter-icon.svg" width={35} height={35} alt="Twitter Feed" />
+                                <Image src="/twitter-icon.svg" 
+                                    width={ICON_DIMENSION} height={ICON_DIMENSION} alt="Twitter Feed" />
                             </Link>
                             <Link href="mailto:ddgroleau.developer@gmail.com" passHref>
-                                <Image src="/email-icon.svg" width={35} height={35} alt="Twitter Feed" />
+                                <Image src="/email-icon.svg" 
+                                    width={ICON_DIMENSION} height={ICON_DIMENSION} alt="Email" />
                             </Link>
                 
                         </div>
@@ -64,8 +71,12 @@ const Footer = () => {
             </section>
             <section className={styles.bottom}>
                 <div className={styles.bottomLinks}>
-                    <small>©{new Date().getFullYear()} ThoughtSpring Creative LLC.</small>
-                    <small><Link href="/privacy">Privacy Policy</Link></small>
+                    <small>©{new Date().getFullYear()} ThoughtSpring Creative, LLC.</small>
+                    <small className={styles.complianceLinks}>
+                        <Link href="/privacy">Privacy Policy</Link>
+                        <Link href="/terms-of-service">Terms of Service</Link>
+                        <Link href="/disclaimer">Disclaimer & Cookie Policy</Link>
+                    </small>
                 </div>
             </section>
         </footer>

@@ -1,0 +1,43 @@
+@import './utility.scss';
+
+.container {
+    display: flex;
+    flex-direction: column;
+    font-size: x-large;
+    max-width: 20rem;
+    padding: 1rem;
+    p {
+        margin-top: 0.5rem;
+    }
+}
+
+.container:hover {
+    box-shadow: 2px 2px 4px 2px $ts-black-25P;
+    border-radius: 12px;
+    transition: .4s;
+    transform: translateY(-1rem);
+    cursor: pointer;
+}
+
+.header {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-bottom: 1rem;
+}
+
+.title {
+    max-width: 60%;
+    margin: 0;
+}
+
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $ts-green;
+    height: 60px;
+    width: 80px;
+    border-radius: 20px;
+    filter: drop-shadow(2px 4px 4px $ts-black-25P);
+}

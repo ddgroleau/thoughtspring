@@ -1,0 +1,71 @@
+@import './utility.scss';
+
+:export {
+    green: $ts-green;
+    black:$ts-black;
+    blue:$ts-blue;
+    white: $ts-white;
+}
+
+.container {
+    background: linear-gradient(180deg, $ts-blue, $ts-blue-90P, $ts-blue-80P 80%, $ts-white);
+    display: flex;
+    min-height: fit-content;
+    justify-content: center;
+    padding-block: 2rem 6em;
+}
+
+.flexWrapper {
+    display: flex;
+    width: 80%;
+    align-items: center;
+    flex-direction: column;
+}
+
+.titleContainer {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+}
+
+.title {
+    font-size: max(3rem, 3vw);
+    color: $ts-white;
+    margin: 0;
+    margin-bottom: 4rem;
+}
+
+.action {
+    display: flex;
+    flex-direction: column;
+    button {
+        margin-top: 3rem;
+    }
+}
+
+@media (min-width:768px) {
+    .container {
+        padding-top: 3rem;
+    }
+    .flexWrapper {
+        flex-direction: row;
+    }
+    .titleContainer {
+        width: 50%;
+    }
+    .title {
+        max-width: 30vw;
+        margin: auto;
+        font-size: max(2rem, 3vw);
+    }
+    .action {
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 50%;
+        button {
+            margin-top: 0;
+            margin-left: 1rem;
+        }
+    }
+}

@@ -1,0 +1,93 @@
+@import './utility.scss';
+
+:export {
+    green: $ts-green;
+    black:$ts-black;
+    blue:$ts-blue;
+    white: $ts-white;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    background-color: $ts-white;
+    padding-block: 2rem;
+}
+
+.flexWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+}
+
+.title {
+    font-size: max(3rem, 2.6vw);
+    text-align: center;
+}
+
+.timeline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.node1 {
+    background-color: $ts-green-40P;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.node2 {
+    background-color: $ts-green-55P;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    z-index: 1;
+    margin-top: -1px;
+}
+
+.node3 {
+    background-color: $ts-green-85P;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    z-index: 1;
+    margin-top: -1px;
+}
+
+.node4 {
+    background-color: $ts-green;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    z-index: 1;
+    margin-top: -1px;
+}
+
+.vertex1 {
+    background-color: $ts-blue-40P;
+    width: 1rem;
+    height: 20rem;
+    margin-top: -1px;
+    z-index: 0;
+}
+
+.vertex2 {
+    background-color: $ts-blue-60P;
+    width: 1rem;
+    height: 20rem;
+    margin-top: -1px;
+    z-index: 0;
+}
+
+.vertex3 {
+    background-color: $ts-blue;
+    width: 1rem;
+    height: 20rem;
+    margin-top: -1px;
+    z-index: 0;
+}

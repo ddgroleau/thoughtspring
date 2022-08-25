@@ -5,6 +5,16 @@ body {
   padding: 0;
   margin: 0;
   font-family: Roboto, sans-serif;
+  height: 100%;
+}
+
+main {
+  min-height: 100vh;
+  height: 100%;
+}
+
+#__next {
+  min-height:100vh;
 }
 
 a {
@@ -14,6 +24,28 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+.styledButton {
+  border-radius: 30px;
+  text-align: center;
+  border: none;
+  background: none;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  transition: .3s;
+  filter: drop-shadow(2px 4px 4px $ts-black-25P);
+  height: fit-content;
+  background-color: $ts-green;
+}
+
+.styledButton:hover {
+  filter: saturate(1.4);
+  transform: translateY(-.5rem);
+}
+
+.styledButton:active {
+  filter: saturate(3);
 }
 
 @media (prefers-color-scheme: dark) {

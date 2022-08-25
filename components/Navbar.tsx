@@ -1,11 +1,16 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Head from 'next/head';
-import styles from '../../styles/Navbar.module.scss';
+import styles from '../styles/Navbar.module.scss';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
-const Navbar = () => {
+type NavbarProps = {
+    title:string;
+    description:string;
+}
+
+const Navbar = ({title,description}:NavbarProps) => {
     const [isToggled,setIsToggled] = useState<boolean|null>(false);
     const [isRotating,setIsRotating] = useState<boolean>(false);
     const hasBeenToggled = useRef(false);
@@ -20,12 +25,12 @@ const Navbar = () => {
     return (
         <>
             <Head>
-                <title>ThoughtSpring - Web Design & Development</title>
-                <meta name="description" content={`New England's leading web design and development company. 
-            We build websites, applications, and custom tools for business automations and analytics.
-            Our developers are also available to join your team and bring your project to the finish-line!
-            ThoughSpring Creative LLC. is a veteran-owned software development company located in Portland, ME, 
-            and proudly serves businesses of any size across MA, CT, NH, VT, RI and ME.`} />
+                <title>{title}</title>
+                <meta name="description" content={description} />
+                <meta name="robots" content="index, follow"/>
+                <meta property="og:title" content={title} />
+                <meta property="og:site_name" content="ThoughtSpring Creative, LLC" />
+                <meta property="og:description" content={description} />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <header className={styles.navContainer}>

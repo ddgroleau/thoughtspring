@@ -6,6 +6,7 @@
     width: 100%;
     background-color: $ts-black;
     z-index: 2;
+    padding: 0.5rem 0;
 }
 
 .nav {
@@ -31,6 +32,10 @@
     a {
         text-decoration: none;
         white-space: nowrap;
+    }
+    a:hover {
+        text-decoration: underline;
+        transition: .4s;
     }
 }
 

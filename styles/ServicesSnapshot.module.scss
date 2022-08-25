@@ -1,0 +1,39 @@
+@import './utility.scss';
+
+.container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding-block: 3rem 4rem;
+
+}
+
+.flexWrapper {
+    display: flex;
+    width: 80%;
+    align-items: center;
+    flex-direction: column;
+}
+
+.title {
+    font-size: max(3rem, 2.6vw);
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.servicesContainer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+@media (min-width: 768px) {
+    .servicesContainer {
+        flex-flow: row wrap;
+        justify-content: space-evenly;
+        width: 100%;
+        align-items: flex-start;
+    }
+}
