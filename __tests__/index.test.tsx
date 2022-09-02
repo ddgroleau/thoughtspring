@@ -25,6 +25,14 @@ export function mockNextUseRouter(pathname: string) {
     }));
 }
 
+export const mockIntersectionObserver = jest.fn();
+mockIntersectionObserver.mockReturnValue({
+    observe: () => null,
+    unobserve: () => null,
+    disconnect: () => null
+});
+window.IntersectionObserver = mockIntersectionObserver;
+
 mockNextUseRouter('/');
 describe('Home', () => {
     it('renders component', () => {
