@@ -56,13 +56,13 @@ const Navbar = ({title,description}:NavbarProps) => {
                     src="https://www.googletagmanager.com/gtag/js?id=G-F7HMEQ8NEQ"
                 >
                 </Script>
-                <Script id="googletag" strategy='lazyOnload'>
-                    {`
+                <Script id="googletag" strategy='afterInteractive' dangerouslySetInnerHTML={{
+                    __html: `
                         window.dataLayer = window.dataLayer || [];
                         function gtag() { dataLayer.push(arguments);};
                         gtag('js', new Date());
                         gtag('config', 'G-F7HMEQ8NEQ');
-                    `}
+                    `,}}>
                 </Script>
             </Head>
             <header 
