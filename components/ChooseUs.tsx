@@ -22,7 +22,7 @@ const ChooseUs = () => {
                         onAnimationStart={()=>setTimeout(()=>rotateOffering(),4050)}
                         onAnimationEnd={()=>setChangeOffering(false)}
                     >
-                        {offerings[offering]}
+                        {offerings[offering] || 'website'}
                     </span>
                 </h2>
                 <div className={styles.body}>
