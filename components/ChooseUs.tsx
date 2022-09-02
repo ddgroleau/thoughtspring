@@ -16,10 +16,10 @@ const ChooseUs = () => {
     return (
         <section className={styles.container}>
             <section className={styles.flexWrapper}>
-                <h2 className={styles.title}>
+                <h4 className={styles.title}>
                     Choose us to build your <span key={words[wordIndex]} className={styles.changeWord}>
                         {words[wordIndex]}</span>
-                </h2>
+                </h4>
                 <div className={styles.body}>
                     <div>
                         <ServicesMeta />

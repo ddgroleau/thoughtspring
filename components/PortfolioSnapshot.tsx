@@ -19,7 +19,7 @@ const PortfolioSnapshot = () => {
                     </div>
                 </div>
                 <div className={styles.action}>
-                    <h2 className={styles.title}>Software design and development with proven results.</h2>
+                    <h3 className={styles.title}>Software design and development with proven results.</h3>
                     <StyledButton innerText='CHECK OUT OUR WORK' 
                         backgroundColor={styles.black} 
                         color={styles.white} 
