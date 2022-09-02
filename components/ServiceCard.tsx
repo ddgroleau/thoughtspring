@@ -15,7 +15,7 @@ const ServiceCard = ({imgSrc,title,body}:ServiceCardProps) => {
                 <div className={styles.icon}>
                     <Image src={imgSrc} height={40} width={40} alt={title}/>
                 </div>
-                <h4 className={styles.title}>{title}</h4>
+                <p className={styles.title}>{title}</p>
             </div>
             <p>{body}</p>
         </article>
