@@ -1,9 +1,11 @@
+/* eslint-disable @next/next/no-script-component-in-head */
 import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Head from 'next/head';
 import styles from '../styles/Navbar.module.scss';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import Script from 'next/script';
 
 type NavbarProps = {
     title:string;
@@ -48,6 +50,20 @@ const Navbar = ({title,description}:NavbarProps) => {
                 <meta property="og:site_name" content="ThoughtSpring Creative, LLC" />
                 <meta property="og:description" content={description} />
                 <link rel="icon" href="/favicon.ico" />
+                <Script 
+                    id="googletagmanager" 
+                    strategy='lazyOnload' 
+                    src="https://www.googletagmanager.com/gtag/js?id=G-F7HMEQ8NEQ"
+                >
+                </Script>
+                <Script id="googletag" strategy='lazyOnload'>
+                    {`
+                        window.dataLayer = window.dataLayer || [];
+                        function gtag() { dataLayer.push(arguments);};
+                        gtag('js', new Date());
+                        gtag('config', 'G-F7HMEQ8NEQ');
+                    `}
+                </Script>
             </Head>
             <header 
                 className={`${styles.navContainer} ${isFading ? styles.fade : ''}`} 
