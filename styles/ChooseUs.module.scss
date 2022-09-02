@@ -1,0 +1,70 @@
+@import './utility.scss';
+
+.title {
+    font-size: max(2.6rem, 2vw);
+    font-weight: 400;
+    width: 100%;
+    span {
+        color: $ts-blue;
+        opacity: 0;
+        font-weight: 600;
+    }
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    background-color: $ts-white;
+    padding-block: 1rem;
+    justify-content: center;
+    padding-bottom: 3rem;
+}
+
+.flexWrapper {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    color: $ts-black;
+}
+
+.changeWord {
+    animation: changeWord 4s ease-in-out;
+}
+
+.body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .body {
+        flex-flow: row wrap;
+        justify-content: space-between;
+        column-gap: 0;
+    }
+}
+
+@keyframes changeWord {
+    0% {
+        opacity: 0;
+        position: relative;
+        top: -1rem;
+    }
+    5% {
+        position: relative;
+        opacity: 1;
+        top: 0;
+    }
+    92% {
+        position: relative;
+        opacity: 1;
+        top: 0;
+    }
+    100% {
+        opacity: 0;
+        position: relative;
+        top: 2rem;
+    }
+}

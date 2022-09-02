@@ -1,8 +1,9 @@
 import type { NextPage } from 'next';
 import BrandHero from '../components/BrandHero';
+import ChooseUs from '../components/ChooseUs';
 import Layout from '../components/Layout';
 import PortfolioSnapshot from '../components/PortfolioSnapshot';
-import ProcessOverview from '../components/ProcessOverview';
+import ScrollAnimation from '../components/ScrollAnimation';
 import ServicesSnapshot from '../components/ServicesSnapshot';
 import styles from '../styles/Home.module.scss';
 
@@ -18,9 +19,15 @@ const Home: NextPage = () => {
         >
             <section className={styles.pageContainer}>
                 <BrandHero />
-                <ServicesSnapshot />
-                <PortfolioSnapshot />
-                {/* <ProcessOverview /> */}
+                <ScrollAnimation animationClass={styles.fadeIn} hiddenClass={styles.hidden}>
+                    <ServicesSnapshot />
+                </ScrollAnimation>
+                <ScrollAnimation animationClass={styles.fadeIn} hiddenClass={styles.hidden}>
+                    <PortfolioSnapshot />
+                </ScrollAnimation>
+                <ScrollAnimation animationClass={styles.slideUp} hiddenClass={styles.hidden}>
+                    <ChooseUs />
+                </ScrollAnimation>
             </section>
         </Layout>
     );

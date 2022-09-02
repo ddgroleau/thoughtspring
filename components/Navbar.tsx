@@ -13,6 +13,9 @@ type NavbarProps = {
 const Navbar = ({title,description}:NavbarProps) => {
     const [isToggled,setIsToggled] = useState<boolean|null>(false);
     const [isRotating,setIsRotating] = useState<boolean>(false);
+    const [isFading,setIsFading] = useState<boolean>(false);
+    const [scrollHeight,setScrollHeight] = useState<number>(0);
+    const [fadeTimeout, setFadeTimeout] = useState<NodeJS.Timeout>(setTimeout(()=>{},0));
     const hasBeenToggled = useRef(false);
     const router = useRouter();
 
@@ -21,6 +24,19 @@ const Navbar = ({title,description}:NavbarProps) => {
         setIsToggled(!isToggled);
         setIsRotating(true);
     };
+
+    useEffect(()=> {
+        const fadeOnScrollDown = () => {
+            setScrollHeight(window.scrollY);
+            if(window.scrollY > scrollHeight) {
+                clearTimeout(fadeTimeout);
+                setIsFading(true); 
+                setFadeTimeout(setTimeout(()=>setIsFading(false),2000));
+            } else setIsFading(false);
+        };
+        window.addEventListener('scroll',fadeOnScrollDown);
+        return ()=>window.removeEventListener('scroll',fadeOnScrollDown);
+    },[scrollHeight]);
 
     return (
         <>
@@ -33,7 +49,9 @@ const Navbar = ({title,description}:NavbarProps) => {
                 <meta property="og:description" content={description} />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <header className={styles.navContainer}>
+            <header 
+                className={`${styles.navContainer} ${isFading ? styles.fade : ''}`} 
+                onTransitionEnd={()=>setFadeTimeout(setTimeout(()=>setIsFading(false),1500))}>
                 <nav className={styles.nav}>
                     <button className={styles.navLogo} onClick={()=>router.push("/")}>
                         <Image src="/logo-sm.png" height={46} width={180} alt={"ThoughtSpring Creative LLC."} />

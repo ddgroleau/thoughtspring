@@ -12,12 +12,12 @@
     width: 100%;
     justify-content: center;
     background-color: $ts-green;
-    padding-block: 4rem;
+    padding-bottom: 3rem;
 }
 
 .flexWrapper {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: center;
     width: 80%;
     color: $ts-white;
@@ -34,6 +34,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-bottom: 3rem;
     button:hover {
         background-color: $ts-white !important;
         color: $ts-green !important;
@@ -70,6 +71,9 @@
 }
 
 @media (min-width:768px) {
+    .container {
+        padding-block: 2rem;
+    }
     .flexWrapper {
         flex-flow: row wrap;
         justify-content: center;
@@ -85,6 +89,5 @@
     .title {
         max-width: max(22rem,25vw);
         text-align: left;
-        margin-top: 1rem;
     }
 }

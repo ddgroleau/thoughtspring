@@ -1,0 +1,23 @@
+@import './utility.scss';
+
+.container {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.meta {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    color: $ts-black-75P;
+    font-size: x-large;
+    span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 50px;
+        min-width: 50px;
+    }
+}

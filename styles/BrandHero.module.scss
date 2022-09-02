@@ -12,7 +12,8 @@
     display: flex;
     min-height: fit-content;
     justify-content: center;
-    padding-block: 2rem 6em;
+    padding-block: 2rem 6rem;
+    padding-top: calc(2rem + 60px);
 }
 
 .flexWrapper {
@@ -45,7 +46,7 @@
 
 @media (min-width:768px) {
     .container {
-        padding-top: 3rem;
+        padding-top: calc(3rem + 60px);
     }
     .flexWrapper {
         flex-direction: row;

@@ -19,6 +19,7 @@
     font-size: max(3rem, 2.6vw);
     text-align: center;
     margin-top: 1rem;
+    font-weight: 400;
 }
 
 .servicesContainer {
@@ -26,7 +27,7 @@
     align-items: center;
     flex-direction: column;
     gap: 2rem;
-    margin-top: 3rem;
+    margin-top: 1rem;
 }
 
 @media (min-width: 768px) {

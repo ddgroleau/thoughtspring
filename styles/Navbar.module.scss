@@ -1,12 +1,19 @@
 @import './utility.scss';
 
 .navContainer {
+    position: fixed;
     display: flex;
     justify-content: center;
     width: 100%;
     background-color: $ts-black;
     z-index: 2;
     padding: 0.5rem 0;
+    opacity: 1;
+    transition: opacity .6s ease-in-out;
+}
+
+.fade {
+    opacity: 0;
 }
 
 .nav {
@@ -115,10 +122,11 @@
 @keyframes fadeDown {
     0% {
         opacity: 0;
-        transform: translateY(-20rem);
+        top: -20rem
     }
     100% {
         opacity: 1;
+        top: 3rem
     }
 }
 
@@ -126,10 +134,11 @@
     0% {
         opacity: 1;
         z-index: -1;
+        top: 3rem;
     }
     100% {
         opacity: 0.4;
-        transform: translateY(-20rem);
+        top: -20rem;
         z-index: -1;
     }
 }

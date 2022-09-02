@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React from 'react';
 import styles from '../styles/ServicesSnapshot.module.scss';
 import ServiceCard from './ServiceCard';
@@ -14,9 +15,9 @@ const ServicesSnapshot = () => {
                         body='Beautiful, responsive creations that will bring customers to you.'
                     />
                     <ServiceCard 
-                        title='Web Applications' 
+                        title='Web & Mobile Applications' 
                         imgSrc='/app-icon.svg' 
-                        body='Complex interfaces and services that will boost the user experience.'
+                        body='Improve the quality and value of your offerings with a high-performance tool or digital experience.'
                     />
                     <ServiceCard 
                         title='Automations & Analytics' 
@@ -24,9 +25,9 @@ const ServicesSnapshot = () => {
                         body='Upgrade your efficiency and gain valuable insights into your business.'
                     />
                     <ServiceCard 
-                        title='Development Resources' 
+                        title='Software Maintenance' 
                         imgSrc='/dev-icon.svg' 
-                        body='Need an expert on your team? Our developers are ready to join your project.'
+                        body='Have a website or an application and need a new feature, or need to fix a bug? We can help.'
                     />
                 </div>
             </div>
