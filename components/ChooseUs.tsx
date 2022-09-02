@@ -4,26 +4,21 @@ import ServicesMeta from './ServicesMeta';
 import WebsiteAssessment from './WebsiteAssessment';
 
 const ChooseUs = () => {
-    const offerings = ['website','application','feature','design','business automation', 'analytics platform'];
-    const [offering,setOffering] = useState<number>(0);
-    const [changeOffering,setChangeOffering] = useState<boolean>(true);
+    const words = ['website','application','feature','design','business automation', 'analytics platform'];
+    const [wordIndex,setWordIndex] = useState<number>(0);
 
-    const rotateOffering = () => {
-        setOffering(offering < offerings.length - 1 ? offering + 1 : 0);
-        setChangeOffering(true);
-    };
+    useEffect(()=> {
+        setTimeout(()=> {
+            setWordIndex(wordIndex < words.length - 1 ? wordIndex + 1 : 0);
+        },4000);
+    },[wordIndex]);
 
     return (
         <section className={styles.container}>
             <section className={styles.flexWrapper}>
                 <h2 className={styles.title}>
-                    Choose us to build your <span 
-                        className={changeOffering ? styles.changeWord : ''}
-                        onAnimationStart={()=>setTimeout(()=>rotateOffering(),4050)}
-                        onAnimationEnd={()=>setChangeOffering(false)}
-                    >
-                        {offerings[offering] || 'website'}
-                    </span>
+                    Choose us to build your <span key={words[wordIndex]} className={styles.changeWord}>
+                        {words[wordIndex]}</span>
                 </h2>
                 <div className={styles.body}>
                     <div>
