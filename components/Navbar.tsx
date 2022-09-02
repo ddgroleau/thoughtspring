@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-script-component-in-head */
 import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Head from 'next/head';
@@ -50,21 +49,22 @@ const Navbar = ({title,description}:NavbarProps) => {
                 <meta property="og:site_name" content="ThoughtSpring Creative, LLC" />
                 <meta property="og:description" content={description} />
                 <link rel="icon" href="/favicon.ico" />
-                <Script 
-                    id="googletagmanager" 
-                    strategy='lazyOnload' 
-                    src="https://www.googletagmanager.com/gtag/js?id=G-F7HMEQ8NEQ"
-                >
-                </Script>
-                <Script id="googletag" strategy='afterInteractive' dangerouslySetInnerHTML={{
-                    __html: `
+        
+            </Head>
+            <Script 
+                id="googletagmanager" 
+                strategy='lazyOnload' 
+                src="https://www.googletagmanager.com/gtag/js?id=G-F7HMEQ8NEQ"
+            >
+            </Script>
+            <Script id="googletag" strategy='afterInteractive' dangerouslySetInnerHTML={{
+                __html: `
                         window.dataLayer = window.dataLayer || [];
                         function gtag() { dataLayer.push(arguments);};
                         gtag('js', new Date());
                         gtag('config', 'G-F7HMEQ8NEQ');
                     `,}}>
-                </Script>
-            </Head>
+            </Script>
             <header 
                 className={`${styles.navContainer} ${isFading ? styles.fade : ''}`} 
                 onTransitionEnd={()=>setFadeTimeout(setTimeout(()=>setIsFading(false),1500))}>
