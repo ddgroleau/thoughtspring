@@ -12,25 +12,33 @@ const Footer = () => {
             <section className={styles.topContainer}>
                 <div className={styles.top}>
                     <nav className={styles.nav}>
-                        <span className={styles.navCategory}>
+                        {/* <span className={styles.navCategory}>
                             <span className={styles.navParent}><Link  href={"/work"}>Our Work</Link></span>
                             <span className={styles.navChild} ><Link href={"/work"}>Testimonials</Link></span>
                             <span className={styles.navChild} ><Link href={"/work"}>Portfolio</Link></span>
-                        </span>
+                        </span> */}
                         <span className={styles.navCategory}>
                             <span className={styles.navParent}><Link  href={"/services"}>Services</Link></span>
-                            <span className={styles.navChild} ><Link href={"/services"}>Our Process</Link></span>
-                            <span className={styles.navChild} ><Link href={"/services"}>Web Development</Link></span>
+                            <span className={styles.navChild} >
+                                <Link href={"/services"}>Design & Development</Link></span>
+                            <span className={styles.navChild} ><Link href={"/services"}>Applications</Link></span>
+                            <span className={styles.navChild} >
+                                <Link href={"/services"}>Automations & Analytics</Link></span>
+                            <span className={styles.navChild} >
+                                <Link href={"/services"}>Software Maintenance</Link></span>
                         </span>
                         <span className={styles.navCategory}>
                             <span className={styles.navParent}><Link  href={"/about"} >About</Link></span>
                             <span className={styles.navChild} ><Link href={"/about"}>Our Story</Link></span>
-                            <span className={styles.navChild} ><Link href={"/about"}>Developers</Link></span>
+                            <span className={styles.navChild} ><Link href={"/about"}>Our Team</Link></span>
                         </span>
                         <span className={styles.navCategory}>
                             <span className={styles.navParent}><Link href={"/contact"} >Contact</Link></span>
                             <span className={styles.navChild} ><Link href={"/contact"}>Email Us</Link></span>
-                            <span className={styles.navChild} ><Link href={"/contact"}>Get a Quote</Link></span>
+                            <span className={styles.navChild} >
+                                <Link href={"/contact"}>Get a Website Assessment</Link></span>
+                            <span className={styles.navChild} >
+                                <Link href={"/contact"}>Schedule a Consultation</Link></span>
                         </span>
                     </nav>
                     <button className={styles.logo} onClick={()=>router.push("/")}>

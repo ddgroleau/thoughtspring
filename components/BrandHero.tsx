@@ -10,14 +10,14 @@ const BrandHero = () => {
         <section className={styles.container}>
             <div className={styles.flexWrapper}>
                 <div className={styles.titleContainer}>
-                    <h1 className={styles.title}>Take your business to the next level.</h1>
+                    <h1 className={styles.title}>Run your business  - while our software grows your business.</h1>
                 </div>
                 <div className={styles.action}>
                     <Image src="/logo-green.svg" height={275} width={262} alt="ThoughtSpring Creative" />
                     <StyledButton 
-                        innerText='GET STARTED' 
-                        backgroundColor={styles.green} 
-                        color={styles.white} 
+                        innerText="CONTACT US" 
+                        backgroundColor={styles.white} 
+                        color={styles.blue} 
                         fontSize={"x-large"}
                         onClick={()=>router.push("/contact")}
                     />

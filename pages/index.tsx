@@ -13,7 +13,6 @@ const Home: NextPage = () => {
             title="ThoughtSpring Creative | Web Design & Development" 
             description={`New England's leading web design and development company. 
         We build websites, applications, and custom tools for business automations and analytics.
-        Our developers are also available to join your team and bring your project to the finish-line!
         ThoughSpring Creative LLC. is a veteran-owned software development company located in Portland, ME, 
         and proudly serves businesses of any size across MA, CT, NH, VT, RI and ME.`}
         >

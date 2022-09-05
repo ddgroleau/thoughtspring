@@ -39,11 +39,14 @@
     a {
         text-decoration: none;
         white-space: nowrap;
+        font-size: large;
     }
-    a:hover {
-        text-decoration: underline;
-        transition: .4s;
-    }
+}
+
+.navLinks > span:hover {
+    border-bottom: solid $ts-white 1px;
+    transition: .4s;
+    cursor: pointer;
 }
 
 .navLinksOpen {
@@ -52,10 +55,14 @@
     padding: 2rem;
     position: absolute;
     background-color: $ts-black;
-    top: 3rem;
+    top: 4rem;
+    height: 100vh;
     left: 0;
     width: 100%;
     animation: fadeDown .4s ease-in-out;
+    a {
+        font-size: x-large;
+    }
 }
 
 .navLinksClosed {
@@ -64,6 +71,7 @@
     padding: 2rem;
     position: absolute;
     background-color: $ts-black;
+    height: 100vh;
     top: 3rem;
     left: 0;
     width: 100%;
@@ -107,6 +115,7 @@
         padding: 0;
         position: initial;
         background-color: $ts-black;
+        height: auto;
         top: inherit;
         left: inherit;
         width: initial;
@@ -138,8 +147,8 @@
     }
     100% {
         opacity: 0.4;
-        top: -20rem;
-        z-index: -1;
+        top: -60rem;
+        z-index: -10;
     }
 }
 

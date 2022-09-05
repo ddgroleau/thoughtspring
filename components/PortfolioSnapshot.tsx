@@ -21,8 +21,8 @@ const PortfolioSnapshot = () => {
                 <div className={styles.action}>
                     <h3 className={styles.title}>Software design and development with proven results.</h3>
                     <StyledButton innerText='CHECK OUT OUR WORK' 
-                        backgroundColor={styles.black} 
-                        color={styles.white} 
+                        backgroundColor={styles.white} 
+                        color={styles.black} 
                         fontSize={"large"}
                         onClick={()=>router.push("/work")} />
                 </div>

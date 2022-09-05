@@ -22,7 +22,7 @@ const ChooseUs = () => {
                 </h4>
                 <div className={styles.body}>
                     <div>
-                        <ServicesMeta />
+                        <ServicesMeta iconTheme='blue'/>
                     </div>
                     <div>
                         <WebsiteAssessment />

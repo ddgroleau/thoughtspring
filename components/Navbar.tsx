@@ -77,9 +77,9 @@ const Navbar = ({title,description}:NavbarProps) => {
                         ${isToggled ? hasBeenToggled.current 
             ? styles.navLinksOpen : '' : hasBeenToggled.current ? styles.navLinksClosed : ''}`}
                     >
-                        <span className={router.pathname === "/work" ? styles.active : ""}>
+                        {/* <span className={router.pathname === "/work" ? styles.active : ""}>
                             <Link href={"/work"}>Our Work</Link>
-                        </span>
+                        </span> */}
                         <span className={router.pathname === "/services" ? styles.active : ""}>
                             <Link href={"/services"}>Services</Link>
                         </span>
