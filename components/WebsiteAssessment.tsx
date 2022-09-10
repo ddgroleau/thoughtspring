@@ -1,15 +1,15 @@
 import React from 'react';
 import styles from '../styles/WebsiteAssessment.module.scss';
-import StyledButton from './StyledButton';
+import StyledLink from './StyledLink';
 
 const WebsiteAssessment = () => {
     return (
         <div className={styles.container}>
             <p><strong>Want to know how competetive your website is?</strong></p>
             <p>Get a free website assessment from us.</p>
-            <StyledButton 
+            <StyledLink 
                 innerText='FREE WEBSITE ASSESSMENT' 
-                onClick={()=>{}} 
+                href="/contact"
                 backgroundColor={styles.blue} 
                 fontSize="large"
                 color={styles.white} 

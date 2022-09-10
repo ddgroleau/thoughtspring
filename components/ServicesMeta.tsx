@@ -22,7 +22,7 @@ const ServicesMeta = ({iconTheme}:{iconTheme:string}) => {
             </div>
             <div className={styles.meta}>
                 <Image src={isWhite ? "/hosting-white.svg" : "/hosting.svg"} 
-                    height={isWhite ? 40 : 0} width={50} alt="Hosting" />
+                    height={isWhite ? 40 : 50} width={50} alt="Hosting" />
                 <p>Hosting, Monitoring and Maintenance</p>
             </div>
             <div className={styles.meta}>

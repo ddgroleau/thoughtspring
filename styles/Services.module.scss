@@ -10,18 +10,20 @@
 .container {
     display: flex;
     flex-direction: column;
+    align-items: center;
     width: 100%;
-    background-color: chocolate;
     height: 100%;
+    padding-bottom: 4rem;
 }
 
 .hero {
     display: flex;
     width: 100%;
-    height: 70vh;
+    height: 50vh;
 }
 
 .heroImg {
+    background-color: $ts-black;
     width: 100%;
     height: 100%;
     background-image: url("/meeting-office.jpg");
@@ -34,19 +36,17 @@
 }
 
 .heroContent {
-    background-color: $ts-black-75P;
+    background-color: $ts-black-80P;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
-    min-height: 85%;
-    height: fit-content;
+    height: 100%;
 }
 
 .flexWrapper {
     display: flex;
     width: 90%;
-    height: 100%;
 }
 
 .leftContent {
@@ -54,8 +54,6 @@
     flex-direction: column;
     justify-content: space-evenly;
     width: 100%;
-    height: 80%;
-    margin-top: -2rem;
 }
 
 .rightContent {
@@ -69,6 +67,7 @@
 .title {
     font-size: max(3rem, 3vw);
     color: $ts-white;
+    margin-top: 0;
 }
 
 .mobileLink {
@@ -77,9 +76,8 @@
     max-width: fit-content;
     color: $ts-white;
     border-radius: 30px;
-    font-size: x-large;
+    font-size: large;
     text-align: center;
-    font-weight: 600;
     a {
         text-decoration: none;
     }
@@ -92,13 +90,80 @@
     transition: 0.4s;
 }
 
+.body {
+    display: flex;
+    flex-direction: column;
+    width: min(90%, 80rem);
+    align-items: center;
+    padding-bottom: 3rem;
+}
+
+.subheading {
+    font-size: max(2.5rem, 2vw);
+    text-align: center;
+    font-weight: 400;
+    margin-top: 3rem;
+}
+
+.bodyContent {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.serviceCard {
+    max-width: max(35rem, 35%);
+    p, h3 {
+        line-height: 2rem;
+        font-size: x-large;
+    }
+}
+
+.fadeIn {
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  .slideUp {
+    animation: slideUp 0.4s ease-in-out;
+  }
+  
+  .hidden {
+    opacity: 0;
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideUp {
+    0% {
+      opacity: 0;
+      transform: translateY(3rem);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0rem);
+    }
+  }
+
+
+
 @media (min-width:768px) {
+    .bodyContent {
+        justify-content: space-between;
+    }
     .mobileLink {
         display: none;
     }
     .leftContent {
         justify-content: flex-start;
-        max-width: 50%;
+        flex: 1 0 60%;
         padding-block: 2rem;
     }
     .servicesMeta {
@@ -113,8 +178,15 @@
     }
     .rightContent {
         display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        width: 100%;
     }
     .hero {
-        height: 80vh;
+        height: 75vh;
+    }
+    .flexWrapper {
+        max-width: max(60rem,75%);
+        gap: 2rem;
     }
 }

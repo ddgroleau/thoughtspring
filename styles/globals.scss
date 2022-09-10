@@ -26,7 +26,7 @@ a {
   box-sizing: border-box;
 }
 
-.styledButton {
+.styledLink {
   border-radius: 30px;
   text-align: center;
   border: none;
@@ -37,14 +37,17 @@ a {
   filter: drop-shadow(2px 4px 4px $ts-black-25P);
   height: fit-content;
   background-color: $ts-green;
+  a {
+    text-decoration: none;
+  }
 }
 
-.styledButton:hover {
+.styledLink:hover {
   filter: saturate(1.4);
   transform: translateY(-.5rem);
 }
 
-.styledButton:active {
+.styledLink:active {
   filter: saturate(3);
 }
 

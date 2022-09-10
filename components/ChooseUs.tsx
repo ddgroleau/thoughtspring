@@ -10,7 +10,7 @@ const ChooseUs = () => {
     useEffect(()=> {
         setTimeout(()=> {
             setWordIndex(wordIndex < words.length - 1 ? wordIndex + 1 : 0);
-        },4000);
+        },4050);
     },[wordIndex]);
 
     return (

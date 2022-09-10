@@ -46,6 +46,10 @@
         justify-content: space-between;
         column-gap: 0;
     }
+    .container {
+        padding-block: 2rem;
+        padding-bottom: 4rem;
+    }
 }
 
 @keyframes changeWord {

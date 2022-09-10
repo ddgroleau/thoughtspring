@@ -29,7 +29,7 @@ const Navbar = ({title,description}:NavbarProps) => {
     useEffect(()=> {
         const fadeOnScrollDown = () => {
             setScrollHeight(window.scrollY);
-            if(window.scrollY > scrollHeight) {
+            if(window.scrollY > scrollHeight && window.screen.width >= 768) {
                 clearTimeout(fadeTimeout);
                 setIsFading(true); 
                 setFadeTimeout(setTimeout(()=>setIsFading(false),2000));

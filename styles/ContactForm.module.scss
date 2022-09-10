@@ -1,0 +1,47 @@
+@import './utility.scss';
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+    max-width: 30rem;
+}
+
+.formInput {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+    label {
+        color: $ts-white;
+        font-size: x-large;
+    }
+    input, textarea {
+        padding: 1rem;
+        border-radius: 6px;
+        border: solid $ts-white 1px;
+        background-color: $ts-white;
+        color: $ts-black;
+        font-size: large;
+    }
+    textarea {
+        min-height: 12rem;
+    }
+}
+
+.formActions {
+    button {
+        border-radius: 30px;
+        border: solid $ts-white 2px;
+        font-size: max(2rem, 1.5vw);
+        padding: 0.5rem 2rem;
+        background-color: transparent;
+    }
+    button:hover {
+        background-color: $ts-white;
+        transition: .4s;
+        color: $ts-black;
+        cursor: pointer;
+    }
+}

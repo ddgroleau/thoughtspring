@@ -34,7 +34,8 @@
     .servicesContainer {
         flex-flow: row wrap;
         justify-content: space-evenly;
-        width: 100%;
+        width: 90%;
+        gap: 0rem;
         align-items: flex-start;
     }
 }
