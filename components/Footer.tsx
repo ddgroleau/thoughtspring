@@ -46,11 +46,11 @@ const Footer = () => {
                     </button>
                     <section className={styles.social}>
                         <div className={styles.socialRow}>
-                            <Link href="https://facebook.com" passHref>
+                            <Link href="https://www.facebook.com/thoughtspringcreative" passHref>
                                 <Image src="/facebook-icon.svg" 
                                     width={ICON_DIMENSION} height={ICON_DIMENSION} alt="Facebook" />
                             </Link>
-                            <Link href="https://instagram.com" passHref>
+                            <Link href="https://www.instagram.com/thoughtspringcreative" passHref>
                                 <Image src="/instagram-icon.svg" 
                                     width={ICON_DIMENSION} height={ICON_DIMENSION} alt="Instagram" />
                             </Link>
@@ -60,15 +60,15 @@ const Footer = () => {
                             </Link>
                         </div>
                         <div className={styles.socialRow}>
-                            <Link href="https://linkedin.com" passHref>
+                            <Link href="https://www.linkedin.com/company/thoughtspring-creative" passHref>
                                 <Image src="/linkedin-icon.svg" 
                                     width={ICON_DIMENSION} height={ICON_DIMENSION} alt="LinkedIn" />
                             </Link>
-                            <Link href="https://twitter.com" passHref>
+                            <Link href="https://twitter.com/ThoughtSpringME" passHref>
                                 <Image src="/twitter-icon.svg" 
                                     width={ICON_DIMENSION} height={ICON_DIMENSION} alt="Twitter Feed" />
                             </Link>
-                            <Link href="mailto:ddgroleau.developer@gmail.com" passHref>
+                            <Link href="mailto:info@thoughtspringcreative.com" passHref>
                                 <Image src="/email-icon.svg" 
                                     width={ICON_DIMENSION} height={ICON_DIMENSION} alt="Email" />
                             </Link>

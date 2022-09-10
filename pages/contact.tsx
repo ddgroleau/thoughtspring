@@ -27,10 +27,10 @@ const Contact = () => {
                                     </p>
                                     <p className={styles.supporting}>
                                         You can also email us 
-                                        at <Link href="mailto:email@thoughtspringcreative.com">
-                                            email@thoughtspringcreative.com
+                                        at <Link href="mailto:info@thoughtspringcreative.com">
+                                            info@thoughtspringcreative.com
                                         </Link>, or 
-                                        call us at <Link href="tel:5555555555">(555) 555 - 5555</Link> to get started.
+                                        call us at <Link href="tel:9789992047">(978) 999 - 2047</Link> to get started.
                                     </p>
                                 </div>
                                 <div className={styles.form}>
