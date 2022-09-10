@@ -48,7 +48,7 @@ const Navbar = ({title,description}:NavbarProps) => {
                 <meta property="og:title" content={title} />
                 <meta property="og:site_name" content="ThoughtSpring Creative, LLC" />
                 <meta property="og:description" content={description} />
-                <meta property="og:image" content={"/logo-sm.png"} />
+                <meta property="og:image" content={"/og-image.png"} />
                 <link rel="icon" href="/favicon.ico" />
         
             </Head>
