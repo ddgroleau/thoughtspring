@@ -48,6 +48,7 @@ const Navbar = ({title,description}:NavbarProps) => {
                 <meta property="og:title" content={title} />
                 <meta property="og:site_name" content="ThoughtSpring Creative, LLC" />
                 <meta property="og:description" content={description} />
+                <meta property="og:image" content={"/logo-sm.png"} />
                 <link rel="icon" href="/favicon.ico" />
         
             </Head>
@@ -69,9 +70,11 @@ const Navbar = ({title,description}:NavbarProps) => {
                 className={`${styles.navContainer} ${isFading ? styles.fade : ''}`} 
                 onTransitionEnd={()=>setFadeTimeout(setTimeout(()=>setIsFading(false),1500))}>
                 <nav className={styles.nav}>
-                    <button className={styles.navLogo} onClick={()=>router.push("/")}>
-                        <Image src="/logo-sm.png" height={46} width={180} alt={"ThoughtSpring Creative LLC."} />
-                    </button>
+                    <div className={styles.navLogo}>
+                        <Link href={"/"}>
+                            <Image src="/logo-sm.png" height={46} width={180} alt={"ThoughtSpring Creative LLC."} />
+                        </Link>
+                    </div>
                     <section 
                         className={`${styles.navLinks} 
                         ${isToggled ? hasBeenToggled.current 

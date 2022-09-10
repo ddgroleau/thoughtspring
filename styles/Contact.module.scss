@@ -48,10 +48,9 @@
     display: flex;
     width: 90%;
     flex-direction: column;
-    padding-top: 2rem;
-    padding-bottom: 3rem;
+    padding-block: 3rem;
     color: $ts-white;
-    gap: 2rem;
+    gap: 1rem;
 }
 
 .title {

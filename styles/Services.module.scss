@@ -105,6 +105,7 @@
     text-align: center;
     font-weight: 400;
     margin-top: 3rem;
+    margin-bottom: 1rem;
 }
 
 .bodyContent {
@@ -187,5 +188,8 @@
     .flexWrapper {
         max-width: max(60rem,75%);
         gap: 2rem;
+    }
+    .subheading {
+        margin-bottom: 2rem;
     }
 }

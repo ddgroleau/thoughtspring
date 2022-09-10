@@ -13,8 +13,10 @@
     align-items: center;
     justify-content: space-between;
     max-width: 30rem;
+    gap: 2rem;
     p {
         font-size: x-large;
+        margin: 0;
         margin-left: 2rem;
     }
     button {

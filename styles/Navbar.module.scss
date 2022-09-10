@@ -26,16 +26,17 @@
 }
 
 .navLogo {
-    margin-left: -0.5rem;
     background: 0;
     border: 0;
     cursor: pointer;
+    margin: 0rem 0.5rem;
 }
 
 .navLinks {
     display: none;
     gap: 3rem;
     z-index: 1;
+    transition: height 0.6s, opacity 0.6s;
     a {
         text-decoration: none;
         white-space: nowrap;
@@ -47,6 +48,7 @@
     border-bottom: solid $ts-white 1px;
     transition: .4s;
     cursor: pointer;
+    width: fit-content;
 }
 
 .navLinksOpen {
@@ -55,11 +57,13 @@
     padding: 2rem;
     position: absolute;
     background-color: $ts-black;
-    top: 4rem;
+    padding-top: 6rem;
     height: 100vh;
+    opacity: 1;
+    top: 0;
     left: 0;
     width: 100%;
-    animation: fadeDown .4s ease-in-out;
+    z-index: -1;
     a {
         font-size: x-large;
     }
@@ -71,11 +75,13 @@
     padding: 2rem;
     position: absolute;
     background-color: $ts-black;
-    height: 100vh;
-    top: 3rem;
+    height: 0vh;
+    opacity: 0;
+    padding-top: 6rem;
+    top: 0;
     left: 0;
     width: 100%;
-    animation: fadeUp .4s ease-in-out forwards;
+    z-index: -1;
 }
 
 .mobileMenu {
@@ -109,16 +115,17 @@
         display: none;
     }
     .navLinksClosed {
-        animation: none;
         display: flex;
         flex-direction: row;
+        align-items: center;
         padding: 0;
+        opacity: 1;
         position: initial;
         background-color: $ts-black;
-        height: auto;
         top: inherit;
         left: inherit;
         width: initial;
+        z-index: inherit;
     }
 }
 
@@ -127,28 +134,3 @@
         transform: rotate(180deg);
     }
 }
-
-@keyframes fadeDown {
-    0% {
-        opacity: 0;
-        top: -20rem
-    }
-    100% {
-        opacity: 1;
-        top: 3rem
-    }
-}
-
-@keyframes fadeUp {
-    0% {
-        opacity: 1;
-        z-index: -1;
-        top: 3rem;
-    }
-    100% {
-        opacity: 0.4;
-        top: -60rem;
-        z-index: -10;
-    }
-}
-

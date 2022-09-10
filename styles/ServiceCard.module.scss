@@ -11,14 +11,6 @@
     }
 }
 
-.container:hover {
-    box-shadow: 2px 2px 4px 2px $ts-black-25P;
-    border-radius: 12px;
-    transition: .4s;
-    transform: translateY(-1rem);
-    cursor: pointer;
-}
-
 .header {
     display: flex;
     align-items: flex-start;
