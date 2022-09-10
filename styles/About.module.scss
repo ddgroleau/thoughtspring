@@ -1,0 +1,148 @@
+@import './utility.scss';
+
+:export {
+    green: $ts-green;
+    black:$ts-black;
+    blue:$ts-blue;
+    white: $ts-white;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 4rem;
+}
+
+.hero {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+}
+
+.heroImg {
+    background-color: $ts-black;
+    width: 100%;
+    height: 100%;
+    background-image: url("/lighthouse.jpg");
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 4rem;
+}
+
+.heroContent {
+    background-color: $ts-black-80P;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.flexWrapper {
+    display: flex;
+    flex-direction: column;
+    width: min(90%,60rem);
+    color: $ts-white;
+    font-size: x-large;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    p {
+        margin-block: 1rem;
+        line-height: 2rem;
+    }
+}
+
+.title {
+    font-size: max(3rem, 3vw);
+    color: $ts-white;
+    margin-top: 0;
+}
+
+.body {
+    display: flex;
+    flex-direction: column;
+    width: min(90%, 60rem);
+    align-items: center;
+}
+
+.subheading {
+    font-size: max(2rem, 2vw);
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    p {
+        font-size: large;
+        line-height: 1.75rem;
+    }
+}
+
+.avatar {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.avatarText {
+
+}
+
+.avatarImg {
+    img{
+        border-radius: 50%;
+    }
+}
+
+.fadeIn {
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  .slideUp {
+    animation: slideUp 0.4s ease-in-out;
+  }
+  
+  .hidden {
+    opacity: 0;
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideUp {
+    0% {
+      opacity: 0;
+      transform: translateY(3rem);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0rem);
+    }
+  }
+
+@media (min-width:768px) {
+    .content {
+        p {
+            font-size: x-large;
+            line-height: 2rem;
+        }
+    }
+    .avatar {
+        p, h3 {
+           font-size: xx-large; 
+           line-height: 2rem;
+        }
+    }
+}
