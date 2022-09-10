@@ -26,31 +26,6 @@ a {
   box-sizing: border-box;
 }
 
-.styledLink {
-  border-radius: 30px;
-  text-align: center;
-  border: none;
-  background: none;
-  padding: 1rem 2rem;
-  cursor: pointer;
-  transition: .3s;
-  filter: drop-shadow(2px 4px 4px $ts-black-25P);
-  height: fit-content;
-  background-color: $ts-green;
-  a {
-    text-decoration: none;
-  }
-}
-
-.styledLink:hover {
-  filter: saturate(1.4);
-  transform: translateY(-.5rem);
-}
-
-.styledLink:active {
-  filter: saturate(3);
-}
-
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
