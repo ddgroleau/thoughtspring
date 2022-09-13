@@ -25,8 +25,8 @@ const ConsentBanner = () => {
         >
             <div className={styles.flexWrapper}>
                 <p className={styles.text}>
-                    We use cookies to provide our services and a good browsing experience. Additionally, 
-                    we strive to ensure our services are accessible to all people. By using this website,
+                    We use cookies to provide a better browsing experience. We strive to ensure 
+                    our services are accessible to all. By using this website,
                     you understand and accept all statements outlined in our <Link 
                         href="/privacy">Privacy Policy</Link>, <Link 
                         href="/terms-of-service">Terms of Service</Link>, <Link 
