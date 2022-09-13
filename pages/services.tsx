@@ -41,35 +41,52 @@ and proudly serves businesses of any size across MA, CT, NH, VT, RI and ME.`}>
                     <div className={styles.bodyContent}>
                         <div className={styles.serviceCard}>
                             <h3>Website Design & Development</h3>
-                            <p>
-                                We build websites of any size and scope. 
-                                Whether you are just starting your online presence, 
-                                or want to upgrade to something bigger and better, we can do it.
-                            </p>
+                            <ul>
+                                <li>New, fresh website builds -
+                                     or a complete redesign of an existing website.</li>
+                                <li>Built to rank highly in search engine results.</li>
+                                <li>Designed for all device sizes (Mobile, Tablet, Desktop and beyond).</li>
+                                <li>Crafted to be accessible to all, regardless of disability status or other.</li>
+                                <li>
+                                    Websites of any scope and scale, from individual owners to enterprise businesses.
+                                </li>
+                            </ul>
                         </div>
                         <div className={styles.serviceCard}>
                             <h3>Web & Mobile Applications</h3>
-                            <p>
-                                Do you have an idea for a new application? 
-                                We can build it. Do you need a tool to manage your business processes? 
-                                We can build that too.
-                            </p>
+                            <ul>
+                                <li>High-performance responsive applications for browsers.</li>
+                                <li>Cutting edge mobile applications for iOS and Android.</li>
+                                <li>Business-internal tools and dashboards to optimize your business.</li>
+                                <li>Custom server-side applications and back-ends.</li>
+                                <li>Single-page applications to replace your existing user-interface.</li>
+                            </ul>
                         </div>
                         <div className={styles.serviceCard}>
                             <h3>Automations & Analytics</h3>
-                            <p>
-                                Do you need a custom reporting process or dashboard? 
-                                Do you want to ditch your excel spreadsheets in 
-                                favor of a modern, automated solution? We can do that for you.
-                            </p>
+                            <ul>
+                                <li>User activity tracking for your website with Google Analytics.</li>
+                                <li>Custom metric and KPI tracking.</li>
+                                <li>
+                                    Automation of manual processes, such as spreadsheet, report, or document creation.
+                                </li>
+                                <li>Contact forms and automated lead-generation tools.</li>
+                                <li>Custom reporting tools and analytics dashboards.</li>
+                            </ul>
+
                         </div>
                         <div className={styles.serviceCard}>
                             <h3>Software Maintenance</h3>
-                            <p>
-                                Are you having an issue with your current website or application? 
-                                Do you want to add a new feature to an exisiting website or application? 
-                                We can do it all.
-                            </p>
+                            <ul>
+                                <li>New website features for an existing website.</li>
+                                <li>Bug fixes, software improvements and enhancements.</li>
+                                <li>Improvements for look and feel of website / application on mobile.</li>
+                                <li>Database extract, transform and load procedures and updates.</li>
+                                <li>
+                                    Continuous Integration - Continuous Delivery Enhancements 
+                                    and Cloud Deployments & Migrations
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </section>

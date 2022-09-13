@@ -97,6 +97,14 @@
     display: flex;
     width: 100%;
   }
+
+  .table {
+    font-size: large;
+    text-align: left;
+    td, th {
+      padding: 0.5rem 1rem;
+    } 
+  }
   
   @keyframes fadeIn {
     0% {

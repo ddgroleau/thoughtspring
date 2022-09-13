@@ -50,6 +50,57 @@ const Contact = () => {
                         href="/contact"
                     />
                 </section>
+                <section>
+                    <table className={styles.table}>
+                        <thead>
+                            <tr>
+                                <th colSpan={3}><h3>Business Hours and Contact Information</h3></th>
+                            </tr>
+                            <tr>
+                                <th></th><th>Open (EST)</th><th>Close (EST)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Sunday</td><td colSpan={2}>CLOSED</td>
+                            </tr>
+                            <tr>
+                                <td>Monday</td><td>7:30 AM</td><td>5:30 PM</td>
+                            </tr>
+                            <tr>
+                                <td>Tuesday</td><td>7:30 AM</td><td>5:30 PM</td>
+                            </tr>
+                            <tr>
+                                <td>Wednesday</td><td>7:30 AM</td><td>5:30 PM</td>
+                            </tr>
+                            <tr>
+                                <td>Thursday</td><td>7:30 AM</td><td>5:30 PM</td>
+                            </tr>
+                            <tr>
+                                <td>Friday</td><td>7:30 AM</td><td>5:30 PM</td>
+                            </tr>
+                            <tr>
+                                <td>Saturday</td><td colSpan={2}>CLOSED</td>
+                            </tr>
+                            <tr>
+                                <td colSpan={3}>
+                                    <small>*Federal and religious holidays may affect these hours.</small>
+                                </td>
+                            </tr>
+                            <br/>
+                            <tr>
+                                <td colSpan={3}>
+                                    Email: <Link href="mailto:info@thoughtspringcreative.com">
+                                        info@thoughtspringcreative.com
+                                    </Link>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colSpan={3}>Phone: <Link href="tel:9789992047">+1 (978) 999 - 2047</Link></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
             </div>
         </Layout>
     );

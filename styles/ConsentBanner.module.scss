@@ -1,0 +1,106 @@
+@import './utility.scss';
+
+.container {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    border-top: solid $ts-black-25P 1px;
+    background-color: $ts-white;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 2rem;
+    opacity: 0;
+}
+
+.fadeIn {
+    animation: fadeIn 0.6s ease-in-out forwards;
+}
+
+.fadeOut {
+    animation: fadeOut 0.4s ease-in-out forwards;
+}
+
+.flexWrapper {
+    display: flex;
+    flex-flow: row wrap;
+    width: 90%;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.text {
+    font-size: x-large;
+    line-height: 2.75rem;
+    max-height: 50vh;
+    overflow-y: auto;
+}
+
+.actions {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 2rem;
+}
+
+@mixin consentBtns($primary, $secondary) {
+        background-color: $primary;
+        color: $secondary;
+        border: solid $primary 2px;
+        border-radius: 30px;
+        padding: 1rem 2rem;
+        font-size: x-large;
+        cursor: pointer;
+        transition: 0.4s;
+    &:hover {
+        background-color: $secondary;
+        color: $primary;
+    }
+}
+
+.accept {
+    @include consentBtns($ts-blue, $ts-white)
+}
+
+.reject {
+    @include consentBtns($ts-black-75P, $ts-white)
+}
+
+@media (min-width: 768px) {
+    .container {
+        padding-top: 1rem;
+    }
+    .text {
+        flex: 0 1 70%;
+    }
+    .actions {
+        flex: 1 0 25%;
+    }
+    .flexWrapper {
+        gap: 3rem;
+        justify-content: flex-start;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        bottom: -6rem;
+    }
+    100% {
+        opacity: 1;
+        bottom: 0;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+        bottom: 0;
+    }
+    100% {
+        opacity: 0;
+        bottom: -6rem;
+    }
+}
