@@ -10,7 +10,7 @@
     z-index: 100;
     display: flex;
     justify-content: center;
-    padding-bottom: 2rem;
+    padding-bottom: 1rem;
     opacity: 0;
 }
 
@@ -32,7 +32,6 @@
 }
 
 .text {
-    font-size: x-large;
     line-height: 2.75rem;
     max-height: 50vh;
     overflow-y: auto;
@@ -50,9 +49,9 @@
         border: solid $primary 2px;
         border-radius: 30px;
         padding: 1rem 2rem;
-        font-size: x-large;
         cursor: pointer;
         transition: 0.4s;
+        font-size: large;
     &:hover {
         background-color: $secondary;
         color: $primary;
