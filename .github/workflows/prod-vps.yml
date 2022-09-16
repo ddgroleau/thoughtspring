@@ -54,9 +54,9 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.PORT }}
           passphrase: ${{ secrets.PASSPHRASE }}
-          envs: DOCKER_REPO,PORT_MAPPING
+          envs: PORT_MAPPING
           script_stop: true
           script: |
             docker pull thoughtspring/thoughtspring
-            docker run -d --restart always -p $PORT_MAPPING thoughtspring/thoughtspring
+            docker run -d --restart always -p "$PORT_MAPPING" thoughtspring/thoughtspring
             exit
