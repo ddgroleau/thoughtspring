@@ -7,53 +7,52 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: "pages"
+  group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
-  # Test
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Install modules
-        run: yarn
-      - name: Run Tests
-        run: yarn test-pipeline
+  # # Test
+  # test:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #     - name: Install modules
+  #       run: yarn
+  #     - name: Run Tests
+  #       run: yarn test-pipeline
 
-  # Build
-  build:
-    runs-on: ubuntu-latest
-    needs: test
-    steps:
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
-      - name: Login to DockerHub
-        uses: docker/login-action@v2
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-      - name: Build and Push to DockerHub
-        uses: docker/build-push-action@v3
-        with:
-          push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/thoughtspring:latest
+  # # Build
+  # build:
+  #   runs-on: ubuntu-latest
+  #   needs: test
+  #   steps:
+  #     - name: Set up Docker Buildx
+  #       uses: docker/setup-buildx-action@v2
+  #     - name: Login to DockerHub
+  #       uses: docker/login-action@v2
+  #       with:
+  #         username: ${{ secrets.DOCKERHUB_USERNAME }}
+  #         password: ${{ secrets.DOCKERHUB_TOKEN }}
+  #     - name: Build and Push to DockerHub
+  #       uses: docker/build-push-action@v3
+  #       with:
+  #         push: true
+  #         tags: ${{ secrets.DOCKERHUB_USERNAME }}/thoughtspring:latest
 
   # Deployment
   deploy:
     runs-on: ubuntu-latest
-    needs: build
+    # needs: build
     steps:
       - name: Pull and Run Docker Image on Linode Remote Server
         uses: appleboy/ssh-action@master
         env:
-          PORT_MAPPING: ${{ secrets.PORT_MAPPING }}
+          TEST: ${{ secrets.TEST_SECRET }}
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USER_NAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.PORT }}
           passphrase: ${{ secrets.PASSPHRASE }}
-          envs: PORT_MAPPING
-          script: docker pull thoughtspring/thoughtspring && docker run -d --restart always -p "$PORT_MAPPING":3000 thoughtspring/thoughtspring && exit && exit 0
-          script_stop: true
+          envs: TEST
+          script: echo $TEST
