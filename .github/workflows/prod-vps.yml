@@ -58,5 +58,6 @@ jobs:
           script_stop: true
           script: |
             docker pull thoughtspring/thoughtspring
-            docker run -d --restart always -p "$PORT_MAPPING":3000 thoughtspring/thoughtspring
+            export LOCAL_PORT="$PORT_MAPPING"
+            docker run -d --restart always -p "$LOCAL_PORT":3000 thoughtspring/thoughtspring
             exit
