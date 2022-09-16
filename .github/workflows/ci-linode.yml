@@ -55,7 +55,9 @@ jobs:
           port: ${{ secrets.PORT }}
           passphrase: ${{ secrets.PASSPHRASE }}
           envs: PORT
-          script: export LOCAL_PORT=$(echo $LOCAL) && \
-            docker pull thoughtspring/thoughtspring && \
-            docker run -d --restart always -p "$LOCAL_PORT":3000 thoughtspring/thoughtspring && \
-            exit
+          script: |
+            export LOCAL_PORT=$(echo $LOCAL) \
+            && docker pull thoughtspring/thoughtspring \
+            && docker run -d --restart always -p "$LOCAL_PORT":3000 thoughtspring/thoughtspring \
+            && exit
+          
