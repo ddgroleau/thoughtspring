@@ -52,7 +52,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.PORT }}
           passphrase: ${{ secrets.PASSPHRASE }}
-          env:
+          envs:
             DOCKER_REPO: ${{ secrets.DOCKERHUB_USERNAME }}
             LOCAL_PORT: ${{ secrets.LOCAL_PORT }}
           script_stop: true
