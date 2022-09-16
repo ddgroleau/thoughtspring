@@ -55,7 +55,7 @@ const Navbar = ({title,description}:NavbarProps) => {
             <Script 
                 id="googletagmanager" 
                 strategy='lazyOnload' 
-                src="https://www.googletagmanager.com/gtag/js?id=G-F7HMEQ8NEQ"
+                src="https://www.googletagmanager.com/gtag/js?id=G-NGBBM42813"
             >
             </Script>
             <Script id="googletag" strategy='afterInteractive' dangerouslySetInnerHTML={{
@@ -63,7 +63,7 @@ const Navbar = ({title,description}:NavbarProps) => {
                         window.dataLayer = window.dataLayer || [];
                         function gtag() { dataLayer.push(arguments);};
                         gtag('js', new Date());
-                        gtag('config', 'G-F7HMEQ8NEQ');
+                        gtag('config', 'G-NGBBM42813');
                     `,}}>
             </Script>
             <header 
