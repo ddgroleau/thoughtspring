@@ -55,4 +55,4 @@ jobs:
           port: ${{ secrets.PORT }}
           passphrase: ${{ secrets.PASSPHRASE }}
           envs: TEST
-          script: echo $TEST
+          script: export NEW_VAR=$(echo $TEST) && echo $NEW_VAR
