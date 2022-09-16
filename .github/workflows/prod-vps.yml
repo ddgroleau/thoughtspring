@@ -51,7 +51,7 @@ jobs:
           username: ${{ secrets.USER_NAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.PORT }}
-          password: ${{ secrets.PASSWORD }}
+          passphrase: ${{ secrets.PASSPHRASE }}
       - run: |
           docker pull ${{ secrets.DOCKERHUB_USERNAME }}/thoughtspring
           docker run -d --restart always -p ${{ secrets.LOCAL_PORT }}:3000
