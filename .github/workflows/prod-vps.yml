@@ -52,7 +52,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.PORT }}
           passphrase: ${{ secrets.PASSPHRASE }}
-      - run: |
-          docker pull ${{ secrets.DOCKERHUB_USERNAME }}/thoughtspring
-          docker run -d --restart always -p ${{ secrets.LOCAL_PORT }}:3000
-          exit
+          script: |
+            docker pull ${{ secrets.DOCKERHUB_USERNAME }}/thoughtspring
+            docker run -d --restart always -p ${{ secrets.LOCAL_PORT }}:3000
+            exit
