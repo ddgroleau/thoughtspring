@@ -47,12 +47,12 @@ jobs:
       - name: Pull and Run Docker Image on Linode Remote Server
         uses: appleboy/ssh-action@master
         env:
-          TEST: ${{ secrets.TEST_SECRET }}
+          PORT: ${{ secrets.PORT }}
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USER_NAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.PORT }}
           passphrase: ${{ secrets.PASSPHRASE }}
-          envs: TEST
-          script: export NEW_VAR=$(echo $TEST) && echo $NEW_VAR
+          envs: PORT
+          script: export LOCAL_PORT=$(echo $PORT) && docker pull thoughtspring/thoughtspring && docker run -d --restart always -p "$PORT":3000 thoughtspring/thoughtspring && exit
