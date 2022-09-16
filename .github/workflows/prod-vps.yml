@@ -55,7 +55,5 @@ jobs:
           port: ${{ secrets.PORT }}
           passphrase: ${{ secrets.PASSPHRASE }}
           envs: PORT_MAPPING
-          script: docker pull thoughtspring/thoughtspring && \
-            docker run -d --restart always -p "$PORT_MAPPING":3000 thoughtspring/thoughtspring && \
-            exit && exit 0
+          script: docker pull thoughtspring/thoughtspring && docker run -d --restart always -p "$PORT_MAPPING":3000 thoughtspring/thoughtspring && exit && exit 0
           script_stop: true
