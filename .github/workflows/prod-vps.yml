@@ -44,7 +44,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - name: Pull and Run Docker Image on VPS
+      - name: Pull and Run Docker Image on Linode Remote Server
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.HOST }}
@@ -54,5 +54,5 @@ jobs:
           passphrase: ${{ secrets.PASSPHRASE }}
           script: |
             docker pull ${{ secrets.DOCKERHUB_USERNAME }}/thoughtspring
-            docker run -d --restart always -p ${{ secrets.LOCAL_PORT }}:3000
+            docker run -d --restart always -p ${{ secrets.LOCAL_PORT }}:3000 ${{ secrets.DOCKERHUB_USERNAME }}/thoughtspring
             exit
