@@ -12,32 +12,32 @@ concurrency:
 
 jobs:
   # Test
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Install modules
-        run: yarn
-      - name: Run Tests
-        run: yarn test-pipeline
+  # test:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #     - name: Install modules
+  #       run: yarn
+  #     - name: Run Tests
+  #       run: yarn test-pipeline
 
-  # Build
-  build:
-    runs-on: ubuntu-latest
-    needs: test
-    steps:
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
-      - name: Login to DockerHub
-        uses: docker/login-action@v2
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-      - name: Build and Push to DockerHub
-        uses: docker/build-push-action@v3
-        with:
-          push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/thoughtspring:latest
+  # # Build
+  # build:
+  #   runs-on: ubuntu-latest
+  #   needs: test
+  #   steps:
+  #     - name: Set up Docker Buildx
+  #       uses: docker/setup-buildx-action@v2
+  #     - name: Login to DockerHub
+  #       uses: docker/login-action@v2
+  #       with:
+  #         username: ${{ secrets.DOCKERHUB_USERNAME }}
+  #         password: ${{ secrets.DOCKERHUB_TOKEN }}
+  #     - name: Build and Push to DockerHub
+  #       uses: docker/build-push-action@v3
+  #       with:
+  #         push: true
+  #         tags: ${{ secrets.DOCKERHUB_USERNAME }}/thoughtspring:latest
 
   # Deployment
   deploy:
@@ -60,4 +60,4 @@ jobs:
           port: ${{ secrets.PORT }}
           passphrase: ${{ secrets.PASSPHRASE }}
           envs: LOCAL_PORT,NEXT_PUBLIC_RECAPTCHA_SITE_KEY,RECAPTCHA_SECRET_KEY,EMAIL_ACCOUNT,EMAIL_DAEMON,EMAIL_PASSWORD
-          script: /ci-linode.sh $LOCAL_PORT $NEXT_PUBLIC_RECAPTCHA_SITE_KEY $RECAPTCHA_SECRET_KEY $EMAIL_ACCOUNT $EMAIL_DAEMON $EMAIL_PASSWORD
+          script: ./ci-linode.sh $LOCAL_PORT $NEXT_PUBLIC_RECAPTCHA_SITE_KEY $RECAPTCHA_SECRET_KEY $EMAIL_ACCOUNT $EMAIL_DAEMON $EMAIL_PASSWORD
