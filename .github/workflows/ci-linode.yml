@@ -61,7 +61,7 @@ jobs:
           passphrase: ${{ secrets.PASSPHRASE }}
           envs: LOCAL_PORT,NEXT_PUBLIC_RECAPTCHA_SITE_KEY,RECAPTCHA_SECRET_KEY,EMAIL_ACCOUNT,EMAIL_DAEMON,EMAIL_PASSWORD
           script: |
-          export envArray=("$LOCAL_PORT" "$NEXT_PUBLIC_RECAPTCHA_SITE_KEY" "$RECAPTCHA_SECRET_KEY" "$EMAIL_ACCOUNT" "$EMAIL_DAEMON" "$EMAIL_PASSWORD") \ 
+          envArray=("$LOCAL_PORT" "$NEXT_PUBLIC_RECAPTCHA_SITE_KEY" "$RECAPTCHA_SECRET_KEY" "$EMAIL_ACCOUNT" "$EMAIL_DAEMON" "$EMAIL_PASSWORD") \ 
           && docker pull thoughtspring/thoughtspring \
           && docker stop thoughtspring && docker rm thoughtspring \
           && docker build . -t thoughtspring/thoughtspring \
