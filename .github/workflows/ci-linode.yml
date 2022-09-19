@@ -60,16 +60,17 @@ jobs:
           port: ${{ secrets.PORT }}
           passphrase: ${{ secrets.PASSPHRASE }}
           envs: LOCAL_PORT,NEXT_PUBLIC_RECAPTCHA_SITE_KEY,RECAPTCHA_SECRET_KEY,EMAIL_ACCOUNT,EMAIL_DAEMON,EMAIL_PASSWORD
-          script: export envArray=($LOCAL_PORT $NEXT_PUBLIC_RECAPTCHA_SITE_KEY $RECAPTCHA_SECRET_KEY $EMAIL_ACCOUNT $EMAIL_DAEMON $EMAIL_PASSWORD); 
-          # && docker pull thoughtspring/thoughtspring \
-          # && docker stop thoughtspring && docker rm thoughtspring \
-          # && docker build . -t thoughtspring/thoughtspring \
-          # && docker run -d -p "$envArray[0]":3000 --name thoughtspring --restart always \
-          # -e NEXT_PUBLIC_RECAPTCHA_SITE_KEY="$envArray[1]" \
-          # -e RECAPTCHA_SECRET_KEY="$envArray[2]" \
-          # -e EMAIL_ACCOUNT="$envArray[3]" \
-          # -e EMAIL_DAEMON="$envArray[4]" \
-          # -e EMAIL_PASSWORD="$envArray[5]" \
-          # thoughtspring/thoughtspring \
-          # && exit
-          # && exit 0;
+          script: |
+          export envArray=($LOCAL_PORT $NEXT_PUBLIC_RECAPTCHA_SITE_KEY $RECAPTCHA_SECRET_KEY $EMAIL_ACCOUNT $EMAIL_DAEMON $EMAIL_PASSWORD) \ 
+          && docker pull thoughtspring/thoughtspring \
+          && docker stop thoughtspring && docker rm thoughtspring \
+          && docker build . -t thoughtspring/thoughtspring \
+          && docker run -d -p "$envArray[0]":3000 --name thoughtspring --restart always \
+          -e NEXT_PUBLIC_RECAPTCHA_SITE_KEY="$envArray[1]" \
+          -e RECAPTCHA_SECRET_KEY="$envArray[2]" \
+          -e EMAIL_ACCOUNT="$envArray[3]" \
+          -e EMAIL_DAEMON="$envArray[4]" \
+          -e EMAIL_PASSWORD="$envArray[5]" \
+          thoughtspring/thoughtspring \
+          && exit
+          && exit 0;
