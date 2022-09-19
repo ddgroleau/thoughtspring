@@ -45,3 +45,9 @@
         cursor: pointer;
     }
 }
+
+.remainingChars {
+    display: flex;
+    justify-content: flex-end;
+    color: $ts-white;
+}

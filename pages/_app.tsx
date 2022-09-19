@@ -2,6 +2,7 @@ import '../styles/globals.scss';
 import type { AppProps } from 'next/app';
 import { createContext, Dispatch, SetStateAction, useEffect, useMemo, useState } from 'react';
 import ConsentBanner from '../components/ConsentBanner';
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 
 type ConsentContextParams = {
     consent:boolean,
@@ -22,10 +23,20 @@ const App = ({ Component, pageProps }: AppProps) => {
     },[consent]);
 
     return (
-        <ConsentContext.Provider value={{consent:consent,updateConsent:setConsent}}>
-            {!consent ? <ConsentBanner/> : undefined}
-            <Component {...pageProps} />
-        </ConsentContext.Provider>
+        <GoogleReCaptchaProvider
+            reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY as string}
+            scriptProps={{
+                async: false,
+                defer: false,
+                appendTo: "head",
+                nonce: undefined
+            }} 
+        >
+            <ConsentContext.Provider value={{consent:consent,updateConsent:setConsent}}>
+                {!consent ? <ConsentBanner/> : undefined}
+                <Component {...pageProps} />
+            </ConsentContext.Provider>
+        </GoogleReCaptchaProvider>
     );
 };
 
