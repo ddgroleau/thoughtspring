@@ -51,21 +51,22 @@ jobs:
           EMAIL_ACCOUNT: ${{ secrets.EMAIL_ACCOUNT }}
           EMAIL_DAEMON: ${{ secrets.EMAIL_DAEMON }}
           EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USER_NAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.PORT }}
           passphrase: ${{ secrets.PASSPHRASE }}
-          envs: HOST_PORT,NEXT_PUBLIC_RECAPTCHA_SITE_KEY,RECAPTCHA_SECRET_KEY,EMAIL_ACCOUNT,EMAIL_DAEMON,EMAIL_PASSWORD
+          envs: HOST_PORT,NEXT_PUBLIC_RECAPTCHA_SITE_KEY,RECAPTCHA_SECRET_KEY,EMAIL_ACCOUNT,EMAIL_DAEMON,EMAIL_PASSWORD,SMTP_PORT
           script: |
-            export envArray=( $HOST_PORT $NEXT_PUBLIC_RECAPTCHA_SITE_KEY $RECAPTCHA_SECRET_KEY $EMAIL_ACCOUNT $EMAIL_DAEMON $EMAIL_PASSWORD ) \
+            export envArray=( $HOST_PORT $NEXT_PUBLIC_RECAPTCHA_SITE_KEY $RECAPTCHA_SECRET_KEY $EMAIL_ACCOUNT $EMAIL_DAEMON $EMAIL_PASSWORD $SMTP_PORT ) \
             && docker pull thoughtspring/thoughtspring \
             && if [[ -z $(docker container ls -a | grep "thoughtspring") ]]; \
             then echo "No container found. Starting thoughtspring container..."; \
             else docker stop thoughtspring && docker rm thoughtspring; \
             fi \
-            && docker run -d -p "${envArray[0]}":3000 --name thoughtspring --restart always \
+            && docker run -d -p "${envArray[0]}":3000 -p "${envArray[6]}":"${envArray[6]}" --name thoughtspring --restart always \
             -e NEXT_PUBLIC_RECAPTCHA_SITE_KEY="${envArray[1]}" \
             -e RECAPTCHA_SECRET_KEY="${envArray[2]}" \
             -e EMAIL_ACCOUNT="${envArray[3]}" \
