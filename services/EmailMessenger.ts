@@ -7,8 +7,8 @@ export default class EmailMessenger {
 
         const smtpclient:nodemailer.Transporter = nodemailer.createTransport({
             service: 'gmail',
-            port: parseInt(process.env.SMTP_PORT as string),
             secure: true,
+            port: parseInt(process.env.SMTP_PORT as string),
             auth: {
                 user: process.env.EMAIL_ACCOUNT,
                 pass: process.env.EMAIL_PASSWORD,
