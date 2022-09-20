@@ -34,6 +34,7 @@ jobs:
       - name: Build and Push to DockerHub
         uses: docker/build-push-action@v3
         with:
+          build-args: NEXT_PUBLIC_RECAPTCHA_SITE_KEY=${{ secrets.NEXT_PUBLIC_RECAPTCHA_SITE_KEY }}
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/thoughtspring:latest
 
@@ -44,7 +45,7 @@ jobs:
       - name: Pull and Run Docker Image on Linode Remote Server
         uses: appleboy/ssh-action@master
         env:
-          LOCAL_PORT: ${{ secrets.LOCAL_PORT }}
+          HOST_PORT: ${{ secrets.HOST_PORT }}
           NEXT_PUBLIC_RECAPTCHA_SITE_KEY: ${{ secrets.NEXT_PUBLIC_RECAPTCHA_SITE_KEY }}
           RECAPTCHA_SECRET_KEY: ${{ secrets.RECAPTCHA_SECRET_KEY }}
           EMAIL_ACCOUNT: ${{ secrets.EMAIL_ACCOUNT }}
@@ -56,9 +57,9 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.PORT }}
           passphrase: ${{ secrets.PASSPHRASE }}
-          envs: LOCAL_PORT,NEXT_PUBLIC_RECAPTCHA_SITE_KEY,RECAPTCHA_SECRET_KEY,EMAIL_ACCOUNT,EMAIL_DAEMON,EMAIL_PASSWORD
+          envs: HOST_PORT,NEXT_PUBLIC_RECAPTCHA_SITE_KEY,RECAPTCHA_SECRET_KEY,EMAIL_ACCOUNT,EMAIL_DAEMON,EMAIL_PASSWORD
           script: |
-            export envArray=($LOCAL_PORT $NEXT_PUBLIC_RECAPTCHA_SITE_KEY $RECAPTCHA_SECRET_KEY $EMAIL_ACCOUNT $EMAIL_DAEMON $EMAIL_PASSWORD) \
+            export envArray=( $HOST_PORT $NEXT_PUBLIC_RECAPTCHA_SITE_KEY $RECAPTCHA_SECRET_KEY $EMAIL_ACCOUNT $EMAIL_DAEMON $EMAIL_PASSWORD ) \
             && docker pull thoughtspring/thoughtspring \
             && if [[ -z $(docker container ls -a | grep "thoughtspring") ]]; \
             then echo "No container found. Starting thoughtspring container..."; \

@@ -1,7 +1,7 @@
 import React, { ChangeEvent, FormEvent, MutableRefObject, useRef, useState } from 'react';
 import styles from '../styles/ContactForm.module.scss';
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
-import axios, { AxiosResponse } from 'axios';
+import axios from 'axios';
 import Toast, { ToastMessage } from './Toast';
 import FormValidator from '../services/FormValidator';
 import ResponseMessages from '../models/ResponseMessages';
