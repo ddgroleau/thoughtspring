@@ -33,6 +33,7 @@ const ContactForm = () => {
     const handleSubmit = async (event:FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         console.log("Recieved new contact: ", email, message);
+        console.log("site key: " + process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY);
         setIsLoading(true);
         if(FormValidator.isInvalidEmail(email as string)) {
             if(emailRef.current) emailRef.current.focus();
