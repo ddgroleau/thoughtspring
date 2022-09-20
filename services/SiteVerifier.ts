@@ -16,7 +16,6 @@ export default class SiteVerifier {
             }
         }).catch(error => error);
         console.log("exit posting site verification");
-        console.log(siteVerification);
 
         return siteVerification && 
           siteVerification.data.success && 

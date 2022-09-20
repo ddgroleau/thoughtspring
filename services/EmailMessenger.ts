@@ -17,6 +17,8 @@ export default class EmailMessenger {
             smtpclient.sendMail(
                 { to: to, from: process.env.EMAIL_DAEMON, subject: subject, text: text }
                 , (error, info) => {
+                    console.log("err: " + error);
+                    console.log("info: " + info);
                     if(error) resolve(false);
                     else resolve(true);
                 }));

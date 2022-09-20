@@ -45,6 +45,9 @@ export default async function handler(
                 const autoReplyStatus = await EmailMessenger.sendMessage(autoReply);
                 const notificationStatus = await EmailMessenger.sendMessage(notification);
                 
+                console.log(autoReply);
+                console.log(notificationStatus);
+
                 if(!autoReplyStatus || !notificationStatus) 
                     throw new Error(ResponseMessages.EMAIL_ERR);
                 return res.status(200).json({message:ResponseMessages.SUCCESS});
