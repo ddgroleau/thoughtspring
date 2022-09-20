@@ -72,6 +72,7 @@ jobs:
             -e EMAIL_ACCOUNT="${envArray[3]}" \
             -e EMAIL_DAEMON="${envArray[4]}" \
             -e EMAIL_PASSWORD="${envArray[5]}" \
+            -e SMTP_PORT="${envArray[6]}" \
             thoughtspring/thoughtspring \
             && exit \
             && exit 0;
