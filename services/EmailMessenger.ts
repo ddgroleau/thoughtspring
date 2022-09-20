@@ -7,7 +7,7 @@ export default class EmailMessenger {
         return new Promise((resolve, reject) => {
             const smtpclient:nodemailer.Transporter = nodemailer.createTransport({
                 service: 'gmail',
-                secure: true,
+                secure: false,
                 port: parseInt(process.env.SMTP_PORT as string),
                 auth: {
                     user: process.env.EMAIL_ACCOUNT,
@@ -18,8 +18,6 @@ export default class EmailMessenger {
             smtpclient.sendMail(
                 { to: to, from: process.env.EMAIL_DAEMON, subject: subject, text: text }
                 , (error, info) => {
-                    console.log("err: " + error);
-                    console.log("info: " + info);
                     if(error) resolve(false);
                     else resolve(true);
                 });

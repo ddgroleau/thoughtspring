@@ -95,7 +95,7 @@ const ContactForm = () => {
                 <button type="submit">SUBMIT</button>
             </div>
             <Toast messages={toasts}/>
-            <Loading isLoading={isLoading} />
+            <Loading isLoading={true} />
         </form>
     );
 };

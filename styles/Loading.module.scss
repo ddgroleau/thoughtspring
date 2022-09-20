@@ -17,14 +17,15 @@
     justify-content: center;
     align-items: center;
     animation: fadeIn .2s ease-in;
+    z-index: 10;
 }
 
 .wave {
     display: flex;
-    width: 2rem;
-    height: 14rem;
+    width: 1rem;
+    height: 12rem;
     background: $ts-blue;
-    margin: .5rem;
+    margin: .25rem;
     animation: wave 1.4s linear infinite;
     border-radius: 20px;
     z-index: 2;
