@@ -24,7 +24,7 @@
     width: 2rem;
     height: 14rem;
     background: $ts-blue;
-    margin: .75rem;
+    margin: .5rem;
     animation: wave 1.4s linear infinite;
     border-radius: 20px;
     z-index: 2;
@@ -63,6 +63,7 @@
     }
     50% {
       transform: scale(1);
+      background: $ts-green;
     }
     100% {
       transform: scale(0);
