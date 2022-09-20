@@ -9,7 +9,10 @@ export default async function handler(
     req: NextApiRequest,
     res: NextApiResponse<any>
 ) {
-    console.log(req);
+    console.log(process.env.EMAIL_DAEMON);
+    console.log(process.env.EMAIL_ACCOUNT);
+    console.log(process.env.EMAIL_PASSWORD);
+    console.log(process.env.RECAPTCHA_SECRET_KEY);
     try {
         if(req.method === "POST") {
             if(MemoryCache.isCachedData("contactForm",{email:req.body.email,message:req.body.message},1000*60*5))
