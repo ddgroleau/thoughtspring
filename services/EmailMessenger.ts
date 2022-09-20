@@ -9,11 +9,19 @@ export default class EmailMessenger {
             service: 'gmail',
             auth: {
                 user: process.env.EMAIL_ACCOUNT,
-                pass: process.env.EMAIL_PASSWORD
+                pass: process.env.EMAIL_PASSWORD,
             }
         });
 
-        return new Promise((resolve, reject) => 
+        smtpclient.verify((error, success) => {
+            if (error) {
+                console.log(error);
+            } else {
+                console.log("Server is ready to take our messages");
+            }
+        });
+
+        return new Promise((resolve, reject) =>
             smtpclient.sendMail(
                 { to: to, from: process.env.EMAIL_DAEMON, subject: subject, text: text }
                 , (error, info) => {

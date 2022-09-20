@@ -41,6 +41,8 @@ export default async function handler(
                     \n - Contact Email: ${req.body.email}
                     \n - Contact Message: "${sanitizedMessage}"`
                 };
+
+                console.log("Ready to send two emails");
               
                 const autoReplyStatus = await EmailMessenger.sendMessage(autoReply);
                 const notificationStatus = await EmailMessenger.sendMessage(notification);
