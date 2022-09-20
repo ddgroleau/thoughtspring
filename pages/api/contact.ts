@@ -9,10 +9,6 @@ export default async function handler(
     req: NextApiRequest,
     res: NextApiResponse<any>
 ) {
-    console.log(process.env.EMAIL_DAEMON);
-    console.log(process.env.EMAIL_ACCOUNT);
-    console.log(process.env.EMAIL_PASSWORD);
-    console.log(process.env.RECAPTCHA_SECRET_KEY);
     try {
         if(req.method === "POST") {
             if(MemoryCache.isCachedData("contactForm",{email:req.body.email,message:req.body.message},1000*60*5))
@@ -23,7 +19,10 @@ export default async function handler(
                 return res.status(400).json({message:ResponseMessages.INVALID_MSG});
 
             const sanitizedMessage = FormValidator.sanitizeMessage(req.body.message);
+
+            console.log("starting site verification");
             const siteVerification = await SiteVerifier.verifySite(req.body.reCaptchaToken);
+            console.log("end site verification");
       
             if(siteVerification) {
                 const autoReply = {

@@ -2,6 +2,7 @@ import axios from "axios";
 
 export default class SiteVerifier {
     public static async verifySite(reCaptchaToken:string):Promise<boolean> {
+        console.log("posting site verification");
         const SCORE_THRESHOLD = 0.5;
         const siteVerification = await axios({
             method: "POST",
@@ -14,6 +15,8 @@ export default class SiteVerifier {
                 "Content-Type": "application/x-www-form-urlencoded; charset=utf-8"
             }
         }).catch(error => error);
+        console.log("exit posting site verification");
+        console.log(siteVerification);
 
         return siteVerification && 
           siteVerification.data.success && 
