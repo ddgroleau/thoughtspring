@@ -17,7 +17,7 @@ export default class EmailMessenger {
 
         smtpclient.verify((error, success) => {
             if (error) {
-                console.log(error);
+                console.log("Server threw an error!: " + error);
             } else {
                 console.log("Server is ready to take our messages");
             }
