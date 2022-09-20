@@ -9,6 +9,7 @@ export default async function handler(
     req: NextApiRequest,
     res: NextApiResponse<any>
 ) {
+    console.log(req);
     try {
         if(req.method === "POST") {
             if(MemoryCache.isCachedData("contactForm",{email:req.body.email,message:req.body.message},1000*60*5))
